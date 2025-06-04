@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InsanityWolfz.io</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="game.js"></script>
 </head>
 <body>
     <header class="top-banner">
@@ -27,19 +26,6 @@
             <section class="welcome-section">
                 <h2>Welcome to InsanityWolfz.io</h2>
                 <p>A modern platform designed for future expansion and experimentation.</p>
-            </section>
-
-            <!-- Fantasy Adventure Game Section -->
-            <section class="game-section">
-                <h2>Fantasy Adventure - Maze Challenge</h2>
-                <p>Navigate the dungeon maze, collect treasure, and avoid the goblins! Use WASD keys to move, P to pause.</p>
-                <div class="game-container">
-                    <canvas id="gameCanvas"></canvas>
-                    <div class="game-controls">
-                        <button id="startBtn" class="game-btn">Start Game</button>
-                        <button id="restartBtn" class="game-btn">Restart</button>
-                    </div>
-                </div>
             </section>
         </div>
     </main>
@@ -69,33 +55,5 @@
         </div>
     </footer>
 
-    <script>
-        let game;
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const startBtn = document.getElementById('startBtn');
-            const restartBtn = document.getElementById('restartBtn');
-            
-            startBtn.addEventListener('click', function() {
-                if (!game || !game.running) {
-                    game = new FantasyGame('gameCanvas');
-                    game.start();
-                    startBtn.textContent = 'Stop Game';
-                } else {
-                    game.stop();
-                    startBtn.textContent = 'Start Game';
-                }
-            });
-            
-            restartBtn.addEventListener('click', function() {
-                if (game) {
-                    game.stop();
-                }
-                game = new FantasyGame('gameCanvas');
-                game.start();
-                startBtn.textContent = 'Stop Game';
-            });
-        });
-    </script>
 </body>
 </html>
